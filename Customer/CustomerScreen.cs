@@ -23,8 +23,6 @@ namespace C969___Scheduler
 
             tableSetting();
 
-            //var idList = new List<int>();
-
             refreshTable();
         }
 
@@ -68,11 +66,6 @@ namespace C969___Scheduler
 
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -87,19 +80,6 @@ namespace C969___Scheduler
             var modify = new ModifyCustomer(col);
             modify.ShowDialog();
 
-            /*
-            try
-            {
-                int col = (int) selected.Cells["ID"].Value;
-
-                var modify = new ModifyCustomer(col);
-                modify.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Customer ID error: " + ex.Message);
-            }
-            */
             refreshTable();
         }
 
@@ -133,6 +113,16 @@ namespace C969___Scheduler
                         {
                             delete.ExecuteNonQuery();
                         }
+                        catch (MySqlException ex)
+                        {
+                            if (ex.Number == 1451)
+                            {
+                                MessageBox.Show("This record cannot be deleted as it is still tied to at least one appointment.");
+                            } else
+                            {
+                                MessageBox.Show("OOPS!!!\n" + ex.Message + " \n " + ex.Number);
+                            }
+                        }
                         catch (Exception ex)
                         {
                             throw new Exception("EXCEPTION:\n" + ex.Message);
@@ -145,7 +135,6 @@ namespace C969___Scheduler
             }
 
             refreshTable();
-
         }
     }
 }

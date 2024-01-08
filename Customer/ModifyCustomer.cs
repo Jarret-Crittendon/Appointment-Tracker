@@ -74,9 +74,10 @@ namespace C969_Task
                 cust.AddressID = addrID;               
             }
         }
-       
+
         private void CheckAddress(Address addr, int cityID)  //Change to just update
         {
+            addr.CityID = cityID;
             if (textBoxAddress.Text != address.Address1 || textBoxAddress2.Text != address.Address2)
             {
                 using (var connection = new MySqlConnection(DBHost.ConStr))
@@ -97,9 +98,8 @@ namespace C969_Task
                     {
                         addr.Address1 = textBoxAddress.Text;
                         addr.Address2 = textBoxAddress2.Text;
-                        addr.Phone = textBoxPhone.Text;
-                        addr.PostalCode = textBoxPostalCode.Text;
-                        addr.CityID = cityID;
+                        
+                        
                     }
 
                     // if address+address2+city id IS in address table,
@@ -119,8 +119,13 @@ namespace C969_Task
 
                         addr.CityID = cityID;
                     }
+
+                    
                 }
             }
+
+            addr.Phone = textBoxPhone.Text;
+            addr.PostalCode = textBoxPostalCode.Text;
         }
 
         private void CheckNewCity(City cty, int countryID)
@@ -171,8 +176,8 @@ namespace C969_Task
                         // store new city id
                         using (var conn = new MySqlConnection(DBHost.ConStr))
                         {
-                            string search = "SELECT cityId FROM country " +
-                                            "WHERE city = @city AND countyId = @countryID;";
+                            string search = "SELECT cityId FROM city " +
+                                            "WHERE city = @city AND countryId = @countryID;";
                             var insert = new MySqlCommand(search, conn);
                             conn.Open();
                             insert.Parameters.AddWithValue("@city", new_city);
@@ -180,7 +185,7 @@ namespace C969_Task
                             var readerID = insert.ExecuteReader();
                             while (readerID.Read())
                             {
-                                cty.ID = (int)readerID["countryId"];
+                                cty.ID = (int)readerID["cityId"];
                             }
                             cty.CountryID = countryID;
                         }

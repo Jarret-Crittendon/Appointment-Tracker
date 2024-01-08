@@ -45,6 +45,7 @@ namespace C969___Scheduler
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(124, 20);
             this.textBoxUsername.TabIndex = 0;
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
             // textBoxPassword
             // 
@@ -53,6 +54,7 @@ namespace C969___Scheduler
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(124, 20);
             this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // labelUsername
             // 

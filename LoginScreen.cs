@@ -47,6 +47,11 @@ namespace C969___Scheduler
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            Submit();
+        }
+
+        private void Submit()
+        {
             var user = textBoxUsername.Text;
             var password = textBoxPassword.Text;
 
@@ -71,8 +76,6 @@ namespace C969___Scheduler
                             this.Close();
                         }
                     }
-
-                    
                 }
             }
             logger.LogError(user);
@@ -87,10 +90,20 @@ namespace C969___Scheduler
             }
         }
 
-        /*
-         * CultureInfo.CurrentCulture.TwoLetterISOLanguageName != "de"
-         * 
-         * 
-         */
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.Submit();
+            }
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.Submit();
+            }
+        }
     }
 }

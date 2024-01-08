@@ -104,18 +104,17 @@
     <Compile Include="Customer\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Address.cs" />
-    <Compile Include="Appointment.cs" />
+    <Compile Include="Base Classes\Address.cs" />
+    <Compile Include="Base Classes\Appointment.cs" />
     <Compile Include="Appointment\AddAppt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Appointment\AddAppt.designer.cs">
       <DependentUpon>AddAppt.cs</DependentUpon>
     </Compile>
-    <Compile Include="City.cs" />
-    <Compile Include="Country.cs" />
-    <Compile Include="CurrentUser.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="Base Classes\City.cs" />
+    <Compile Include="Base Classes\Country.cs" />
+    <Compile Include="Base Classes\Customer.cs" />
     <Compile Include="Customer\CustomerScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +122,7 @@
       <DependentUpon>CustomerScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\DBHost.cs" />
-    <Compile Include="Logger.cs" />
+    <Compile Include="Base Classes\Logger.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,8 +147,8 @@
     <Compile Include="Appointment\UpdateAppt.Designer.cs">
       <DependentUpon>UpdateAppt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pair.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Base Classes\Pair.cs" />
+    <Compile Include="Base Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportScreen.cs">
       <SubType>Form</SubType>
@@ -157,7 +156,7 @@
     <Compile Include="ReportScreen.Designer.cs">
       <DependentUpon>ReportScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Base Classes\User.cs" />
     <EmbeddedResource Include="Appointment\UpdateAppt.resx">
       <DependentUpon>UpdateAppt.cs</DependentUpon>
     </EmbeddedResource>

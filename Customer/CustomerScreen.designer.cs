@@ -41,7 +41,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(414, 169);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 15;
+            this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -52,14 +52,14 @@
             this.dataGridViewCustomer.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.Size = new System.Drawing.Size(330, 149);
-            this.dataGridViewCustomer.TabIndex = 16;
+            this.dataGridViewCustomer.TabIndex = 0;
             // 
             // buttonDeleteCustomer
             // 
             this.buttonDeleteCustomer.Location = new System.Drawing.Point(370, 100);
             this.buttonDeleteCustomer.Name = "buttonDeleteCustomer";
             this.buttonDeleteCustomer.Size = new System.Drawing.Size(100, 23);
-            this.buttonDeleteCustomer.TabIndex = 17;
+            this.buttonDeleteCustomer.TabIndex = 3;
             this.buttonDeleteCustomer.Text = "Delete Customer";
             this.buttonDeleteCustomer.UseVisualStyleBackColor = true;
             this.buttonDeleteCustomer.Click += new System.EventHandler(this.buttonDeleteCustomer_Click);
@@ -69,7 +69,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(370, 42);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(100, 23);
-            this.buttonAdd.TabIndex = 18;
+            this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "Add Customer";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -79,7 +79,7 @@
             this.buttonModify.Location = new System.Drawing.Point(370, 71);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(100, 23);
-            this.buttonModify.TabIndex = 19;
+            this.buttonModify.TabIndex = 2;
             this.buttonModify.Text = "Modify Customer";
             this.buttonModify.UseVisualStyleBackColor = true;
             this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);

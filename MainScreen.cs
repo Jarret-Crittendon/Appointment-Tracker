@@ -36,7 +36,7 @@ namespace C969___Scheduler
             string sql = "SELECT title, start, end, location, appointmentId FROM appointment ";
             if (radioButtonMonth.Checked)
             {
-                sql += "WHERE start BETWEEN date_add((date_add(last_day(now()), INTERVAL 1 DAY)), interval(-1) month) AND last_day(now());";
+                sql += "WHERE month(start) = " + DateTime.Now.Month + ";";
             }
             else if (radioButtonWeek.Checked)
             {
