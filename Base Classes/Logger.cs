@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C969_Task
+namespace Appointment_Tracker
 {
     public class Logger
     {

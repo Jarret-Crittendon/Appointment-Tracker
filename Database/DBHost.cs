@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
-namespace C969_Task.Database
+namespace Appointment_Tracker.Database
 {
     public class DBHost
     {

@@ -1,5 +1,5 @@
-using C969_Task;
-using C969_Task.Database;
+using Appointment_Tracker;
+using Appointment_Tracker.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Configuration;

@@ -1,5 +1,5 @@
-﻿using C969_Task;
-using C969_Task.Database;
+﻿using Appointment_Tracker;
+using Appointment_Tracker.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -120,7 +120,7 @@ namespace C969___Scheduler
                                 MessageBox.Show("This record cannot be deleted as it is still tied to at least one appointment.");
                             } else
                             {
-                                MessageBox.Show("OOPS!!!\n" + ex.Message + " \n " + ex.Number);
+                                MessageBox.Show("Error:\n" + ex.Message + " \n " + ex.Number);
                             }
                         }
                         catch (Exception ex)

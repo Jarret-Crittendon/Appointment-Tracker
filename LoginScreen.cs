@@ -1,5 +1,5 @@
-﻿using C969_Task.Database;
-using C969_Task;
+﻿using Appointment_Tracker.Database;
+using Appointment_Tracker;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -59,6 +59,7 @@ namespace C969___Scheduler
             {
                 string sql = "SELECT password, userId FROM user WHERE userName = @User;";
                 MySqlCommand command = new MySqlCommand(sql, connection);
+                // TODO: handle MySqlException for Open()
                 connection.Open();
                 command.Parameters.AddWithValue("@User", user);
                 MySqlDataReader reader = command.ExecuteReader();

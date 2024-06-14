@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{70A129B6-3A44-448D-A1BE-0BBC70952395}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>C969_Task</RootNamespace>
-    <AssemblyName>C969 Task</AssemblyName>
+    <RootNamespace>Appointment_Tracker</RootNamespace>
+    <AssemblyName>Appointment_Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -186,6 +186,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportScreen.resx">
       <DependentUpon>ReportScreen.cs</DependentUpon>

@@ -1,4 +1,4 @@
-﻿namespace C969_Task
+﻿namespace Appointment_Tracker
 {
     partial class ReportScreen
     {

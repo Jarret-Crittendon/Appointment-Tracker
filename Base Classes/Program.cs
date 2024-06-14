@@ -1,5 +1,5 @@
 ﻿using C969___Scheduler;
-using C969_Task.Database;
+using Appointment_Tracker.Database;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Task
+namespace Appointment_Tracker
 {
     internal static class Program
     {

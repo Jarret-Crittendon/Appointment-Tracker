@@ -1,5 +1,5 @@
 ﻿using C969___Scheduler;
-using C969_Task.Database;
+using Appointment_Tracker.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Task
+namespace Appointment_Tracker
 {
     public partial class UpdateAppt : Form
     {
