@@ -136,12 +136,13 @@ namespace C969___Scheduler
                             this.Close();
                         } else
                         {
-                            logger.LogError(user);
+                            break;
                         }
                     }
+
+                    return;
                 }
             }
-            
 
             if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "de")
             {
@@ -151,6 +152,8 @@ namespace C969___Scheduler
             {
                 MessageBox.Show("Username or password does not match.");
             }
+
+            logger.LogError(user);
         }
 
         private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
