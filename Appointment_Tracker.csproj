@@ -98,6 +98,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base Classes\Subclasses\Admin.cs" />
+    <Compile Include="Base Classes\Subclasses\TechSupport.cs" />
     <Compile Include="Customer\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>

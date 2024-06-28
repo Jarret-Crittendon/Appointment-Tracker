@@ -12,20 +12,19 @@ namespace C969___Scheduler
 {
     public partial class MainScreen : Form
     {
-        //TODO: Two or more lambda expressions
 
-        public static string User {  get; set; }
+        public static User currentUser;
         public static int UserID {  get; set; }
 
         public static string Username {  get; private set; }
-        public MainScreen(string user, int id)
+        public MainScreen(User user, int id)
         {
             InitializeComponent();
 
             tableSetting();
             RefreshAppt();
 
-            User = user;
+            currentUser = user;
             UserID = id;
 
             ImpendingAppointments();
@@ -209,7 +208,7 @@ namespace C969___Scheduler
                     
                     if (compare >= zeroMinutes && compare <= fifteenMinutes)
                     {
-                        var s = string.Format("{0} has an appointment soon!\n[{1}] starting at {2}", MainScreen.User, apptTitle, apptStart);
+                        var s = string.Format("{0} has an appointment soon!\n[{1}] starting at {2}", MainScreen.currentUser.Username, apptTitle, apptStart);
                         MessageBox.Show(s);
                     } 
                 }

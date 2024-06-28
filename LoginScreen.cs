@@ -11,17 +11,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Appointment_Tracker.Base_Classes.Subclasses;
 
 namespace C969___Scheduler
 {
     public partial class LoginScreen : Form
     {
         Logger logger = new Logger();
+        Dictionary<int, string> Admins = new Dictionary<int, string>();
+        Dictionary<int, string> Techs = new Dictionary<int, string>();
+
+        enum UserLevel
+        {
+            Normal,
+            Technician,
+            Admin
+        }
 
         public LoginScreen()
         {
             InitializeComponent();
             DetectGerman();
+            Admins.Add(3, "djeeta");
+            Techs.Add(2, "gran");
         }
 
         private void LoginScreen_Load(object sender, EventArgs e)
@@ -54,10 +66,12 @@ namespace C969___Scheduler
         {
             var user = textBoxUsername.Text;
             var password = textBoxPassword.Text;
+            User currentUser;
+            UserLevel level = UserLevel.Normal; 
 
             using (var connection = new MySqlConnection(DBHost.ConStr))
             {
-                string sql = "SELECT password, userId FROM user WHERE userName = @User;";
+                string sql = "SELECT * FROM user WHERE userName = @User;";
                 MySqlCommand command = new MySqlCommand(sql, connection);
                 // TODO: handle MySqlException for Open()
                 connection.Open();
@@ -69,17 +83,65 @@ namespace C969___Scheduler
                     {
                         if (password.Equals(reader["password"].ToString()))
                         {
+                            foreach (var entry in Techs)
+                            {
+                                if (entry.Key == (int)reader["userID"] &&
+                                    entry.Value == reader["username"].ToString())
+                                {
+                                    level = UserLevel.Technician;
+                                }
+                            }
+
+                            foreach (var entry in Admins)
+                            {
+                                if (entry.Key == (int)reader["userID"] &&
+                                    entry.Value == reader["username"].ToString())
+                                {
+                                    level = UserLevel.Admin;
+                                }
+                            }
+
+                            var tempUser = new User
+                            {
+                                ID = (int)reader["userID"],
+                                Username = reader["username"].ToString(),
+                                Password = reader["password"].ToString(),
+                                Active = (reader["active"] as bool?).GetValueOrDefault(),
+                                CreateDate = Convert.ToDateTime(reader["createDate"].ToString()),
+                                CreatedBy = reader["createdBy"].ToString(),
+                                LastUpdate = Convert.ToDateTime(reader["lastUpdate"]),
+                                LastUpdatedBy = reader["lastUpdateBy"].ToString(),                              
+                            };
+
+
+                            if (level == UserLevel.Admin)
+                            {
+                                currentUser = new Admin(tempUser);
+                            }
+                            else if (level == UserLevel.Technician)
+                            {
+                                currentUser = new TechSupport(tempUser);
+                            }
+                            else
+                            {
+                                currentUser = tempUser;
+                            }
+                            
+
                             var id = (int)reader["userId"];
-                            var main = new MainScreen(user, id);
-                            logger.LogSuccess(user);
+                            var main = new MainScreen(currentUser, id);
+                            logger.LogSuccess(currentUser);
                             this.Hide();
                             main.ShowDialog();
                             this.Close();
+                        } else
+                        {
+                            logger.LogError(user);
                         }
                     }
                 }
             }
-            logger.LogError(user);
+            
 
             if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "de")
             {

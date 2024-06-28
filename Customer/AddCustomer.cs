@@ -55,7 +55,7 @@ namespace Appointment_Tracker
                 insert.Parameters.AddWithValue("@addrID", AddressID);
                 insert.Parameters.AddWithValue("@active", 1);
                 insert.Parameters.AddWithValue("@current", DateTime.UtcNow);
-                insert.Parameters.AddWithValue("@user", MainScreen.User);
+                insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
 
                 try
                 {
@@ -104,7 +104,7 @@ namespace Appointment_Tracker
                         insert.Parameters.AddWithValue("@code", PostalCode);
                         insert.Parameters.AddWithValue("@phone", Phone);
                         insert.Parameters.AddWithValue("@current", DateTime.UtcNow);
-                        insert.Parameters.AddWithValue("@user", MainScreen.User);
+                        insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
                         try
                         {
                             insert.ExecuteNonQuery();
@@ -271,7 +271,7 @@ namespace Appointment_Tracker
                         conn.Open();
                         insert.Parameters.AddWithValue("@country", new_country);
                         insert.Parameters.AddWithValue("@current", DateTime.UtcNow);
-                        insert.Parameters.AddWithValue("@user", MainScreen.User);
+                        insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
 
                         try
                         {
@@ -279,7 +279,7 @@ namespace Appointment_Tracker
                         }
                         catch (Exception ex)
                         {
-                            throw new Exception("EXCEPTION, " + new_country + ", " + MainScreen.User + ":\n" + ex.Message);
+                            throw new Exception("EXCEPTION, " + new_country + ", " + MainScreen.currentUser.Username + ":\n" + ex.Message);
                         }
                     }
 
@@ -347,7 +347,7 @@ namespace Appointment_Tracker
                         insert.Parameters.AddWithValue("@city", new_city);
                         insert.Parameters.AddWithValue("@countryID", CountryID);
                         insert.Parameters.AddWithValue("@current", DateTime.UtcNow);
-                        insert.Parameters.AddWithValue("@user", MainScreen.User);
+                        insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
                         try
                         {
                             insert.ExecuteNonQuery();

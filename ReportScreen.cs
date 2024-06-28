@@ -39,19 +39,21 @@ namespace Appointment_Tracker
 
             
 
-            var months = new List<Pair>();
-            months.Add(new Pair(1, "January"));
-            months.Add(new Pair(2, "February"));
-            months.Add(new Pair(3, "March"));
-            months.Add(new Pair(4, "April"));
-            months.Add(new Pair(5, "May"));
-            months.Add(new Pair(6, "June"));
-            months.Add(new Pair(7, "July"));
-            months.Add(new Pair(8, "August"));
-            months.Add(new Pair(9, "September"));
-            months.Add(new Pair(10, "October"));
-            months.Add(new Pair(11, "November"));
-            months.Add(new Pair(12, "December"));
+            var months = new List<Pair>
+            {
+                new Pair(1, "January"),
+                new Pair(2, "February"),
+                new Pair(3, "March"),
+                new Pair(4, "April"),
+                new Pair(5, "May"),
+                new Pair(6, "June"),
+                new Pair(7, "July"),
+                new Pair(8, "August"),
+                new Pair(9, "September"),
+                new Pair(10, "October"),
+                new Pair(11, "November"),
+                new Pair(12, "December")
+            };
 
             comboBoxMonth.DataSource = months;
             comboBoxMonth.DisplayMember = "Name";

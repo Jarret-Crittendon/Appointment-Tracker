@@ -159,7 +159,7 @@ namespace Appointment_Tracker
                             insert.Parameters.AddWithValue("@city", new_city);
                             insert.Parameters.AddWithValue("@countryID", countryID);
                             insert.Parameters.AddWithValue("@current", DateTime.UtcNow);
-                            insert.Parameters.AddWithValue("@user", MainScreen.User);
+                            insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
                             try
                             {
                                 insert.ExecuteNonQuery();
@@ -238,7 +238,7 @@ namespace Appointment_Tracker
                             conn.Open();
                             insert.Parameters.AddWithValue("@country", new_country);
                             insert.Parameters.AddWithValue("@current", DateTime.UtcNow);
-                            insert.Parameters.AddWithValue("@user", MainScreen.User);
+                            insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
                             try
                             {
                                 insert.ExecuteNonQuery();

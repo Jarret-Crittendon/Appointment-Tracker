@@ -59,7 +59,7 @@ namespace Appointment_Tracker.Database
                 insert.Parameters.AddWithValue("@start", newAppt.Start);
                 insert.Parameters.AddWithValue("@end", newAppt.End);
                 insert.Parameters.AddWithValue("@current", newAppt.CreateDate);
-                insert.Parameters.AddWithValue("@user", MainScreen.User);
+                insert.Parameters.AddWithValue("@user", MainScreen.currentUser.Username);
                 try
                 {
                     insert.ExecuteNonQuery();

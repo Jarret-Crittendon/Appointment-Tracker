@@ -132,9 +132,9 @@ namespace C969___Scheduler
                 appt.Start = dateTimeStart.Value.ToUniversalTime();
                 appt.End = dateTimeEnd.Value.ToUniversalTime(); 
                 appt.CreateDate = DateTime.UtcNow;
-                appt.CreatedBy = MainScreen.User;
+                appt.CreatedBy = MainScreen.currentUser.Username;
                 appt.LastUpdate = DateTime.UtcNow;
-                appt.LastUpdateBy = MainScreen.User;
+                appt.LastUpdateBy = MainScreen.currentUser.Username;
 
                 if (!appt.WithinBusinessHours())
                 {

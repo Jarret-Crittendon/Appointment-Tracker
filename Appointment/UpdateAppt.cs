@@ -147,7 +147,7 @@ namespace Appointment_Tracker
                 newAppt.CreateDate = targetAppt.CreateDate.ToUniversalTime();
                 newAppt.CreatedBy = targetAppt.CreatedBy;
                 newAppt.LastUpdate = DateTime.UtcNow;
-                newAppt.LastUpdateBy = MainScreen.User;
+                newAppt.LastUpdateBy = MainScreen.currentUser.Username;
 
                 if (!newAppt.WithinBusinessHours())
                 {
