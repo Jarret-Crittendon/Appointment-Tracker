@@ -150,6 +150,7 @@ namespace C969___Scheduler
                         try
                         {
                             delete.ExecuteNonQuery();
+                            RefreshAppt();
                         }
                         catch (Exception ex)
                         {
