@@ -1,4 +1,4 @@
-﻿using C969___Scheduler;
+﻿using Appointment_Tracker;
 using Appointment_Tracker;
 using Appointment_Tracker.Database;
 using MySql.Data.MySqlClient;

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace C969___Scheduler
+namespace Appointment_Tracker
 {
     partial class LoginScreen
     {

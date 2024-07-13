@@ -1,4 +1,4 @@
-﻿namespace C969___Scheduler
+﻿namespace Appointment_Tracker
 {
     partial class AddAppt
     {

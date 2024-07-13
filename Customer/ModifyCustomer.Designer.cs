@@ -201,7 +201,7 @@
             this.Controls.Add(this.textBoxCountry);
             this.Controls.Add(this.textBoxName);
             this.Name = "ModifyCustomer";
-            this.Text = "ModifyCustomer";
+            this.Text = "Modify Customer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

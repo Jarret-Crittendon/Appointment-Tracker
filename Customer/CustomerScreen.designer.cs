@@ -1,4 +1,4 @@
-﻿namespace C969___Scheduler
+﻿namespace Appointment_Tracker
 {
     partial class CustomerScreen
     {
@@ -96,7 +96,7 @@
             this.Controls.Add(this.buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomerScreen";
-            this.Text = "CustomerScreen";
+            this.Text = "Customer Screen";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.ResumeLayout(false);
 

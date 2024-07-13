@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Appointment_Tracker.Base_Classes.Subclasses;
 
-namespace C969___Scheduler
+namespace Appointment_Tracker
 {
     public partial class LoginScreen : Form
     {

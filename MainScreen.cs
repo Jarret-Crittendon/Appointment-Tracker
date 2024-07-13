@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace C969___Scheduler
+namespace Appointment_Tracker
 {
     public partial class MainScreen : Form
     {

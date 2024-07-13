@@ -187,7 +187,7 @@
             this.Controls.Add(this.comboBoxUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReportScreen";
-            this.Text = "ReportScreen";
+            this.Text = "Reports";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

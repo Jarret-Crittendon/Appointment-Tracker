@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969___Scheduler
+namespace Appointment_Tracker
 {
     public partial class CustomerScreen : Form
     {
@@ -115,7 +115,7 @@ namespace C969___Scheduler
                         }
                         catch (MySqlException ex)
                         {
-                            if (ex.Number == 1451)
+                            if (ex.Number == 1451 || ex.Number == 1217)
                             {
                                 MessageBox.Show("This record cannot be deleted as it is still tied to at least one appointment.");
                             } else
